@@ -21,42 +21,85 @@
 
 <script>
 import JobSelect from './JobSelect.vue'
+import MonthSelect from './MonthSelect.vue'
+import YearSelect from './YearSelect.vue'
 
 export default {
   methods: {
-    update(val) {
-      this.selected = val
-    }
+    updateJob(val) {
+      this.job = val
+    },
+    updateYear(val) {
+      this.year = val
+    },
+    updateMonth(val) {
+      this.month = val
+    },
   },
   components: {
     JobSelect
+  },  
+  watch: {
+    data() {
+      console.log('Data loaded');
+      console.log(this.data)
+    }
   },
   data() { 
     return {
-      selected: "test",
-      items: [
-        { title: "test", link: "test" },
-        { title: "pest", link: "pest" },
-        { title: "lest", link: "lest" }
-      ]
+      job: "test",
+      year: "1990",
+      month: "Januari",
+      message: "measage",
+      months: [
+        { title: "Januari", value: "01" },
+        { title: "Februari", value: "02" },
+        { title: "Maart", value: "03" },
+        { title: "April", value: "04" },
+        { title: "Mei", value: "05" },
+        { title: "Juni", value: "06" },
+        { title: "Juli", value: "07" },
+        { title: "Augustus", value: "08" },
+        { title: "September", value: "09" },
+        { title: "Oktober", value: "10" },
+        { title: "November", value: "11" },
+        { title: "December", value: "12" },
+      ],
+      years: [...Array(13).keys()].map(x => x + 2010)
     }
   },
   computed: {
-    // computed property that auto-updates when the prop changes
-    sortedItems(values) {
-      return values[0]
+    filteredData() {
+      if (!this.data) {
+        return [];
+      } 
+      const sortedItems = this.sortedData.filter((job) => (job.title.includes(this.message)));
+      return sortedItems
+    },
+    sortedData() {
+      if (!this.data) {
+        return [];
+      }
+      const sortedData = this.data.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+      return sortedData;
     }
   },
-
 }
 </script>
 
 
 <template>
+<input v-model="message" placeholder="edit me" />
+<p>Year is: {{ year }}</p>
+<p>Month is: {{ month }}</p>
 
-<job-select class="select" :jobs="data" @update-job-value="update"></job-select>
+<year-select class="select" :years="years" @update-year-value="updateYear"></year-select>
 
-<div>Selected: {{ selected }}</div>
+<month-select class="select" :months="months" @update-month-value="updateMonth"></month-select>
+
+<job-select class="select" :jobs="filteredData" @update-job-value="updateJob"></job-select>
+
+<div>Job: {{ job }}</div>
 
 </template>
 
