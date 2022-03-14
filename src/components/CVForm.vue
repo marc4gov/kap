@@ -1,10 +1,13 @@
 <script setup>
   import {ref, onMounted} from 'vue'
+  import { useJobsStore } from '../stores/jobs'
+  import { storeToRefs } from 'pinia'
 
   const data = ref(null)
   const error = ref(null)
   const loading = ref(true)
-
+  
+  const store = useJobsStore()
   function getData(url) {
     fetch(url)
     .then((res) => res.json())
@@ -29,41 +32,71 @@ export default {
     updateJob(val) {
       this.job = val
     },
-    updateYear(val) {
-      this.year = val
+    updateYearStart(val) {
+      this.yearStart = val
     },
-    updateMonth(val) {
-      this.month = val
+    updateYearEnd(val) {
+      this.yearEnd = val
     },
+    updateMonthStart(val) {
+      this.monthStart = val
+    },
+    updateMonthEnd(val) {
+      this.monthEnd = val
+    },
+    arrayRemove(arr, value) { 
+        return arr.filter(function(ele){ 
+            return ele != value; 
+        });
+    },
+    appendJob() {
+      this.store.jobs.push({
+        "id": this.job, 
+        "yearStart": this.yearStart, 
+        "monthStart": this.monthStart,
+        "yearEnd": this.yearEnd, 
+        "monthEnd": this.monthEnd,
+      })
+    },
+    removeJob() {
+      this.store.jobs = this.arrayRemove(this.store.jobs, this.store.jobs[this.store.jobs.length-1])
+    },
+    getJobs() {
+      console.log(this.store.jobs)
+    }
   },
   components: {
-    JobSelect
+    JobSelect,
+    MonthSelect,
+    YearSelect
   },  
   watch: {
     data() {
       console.log('Data loaded');
-      console.log(this.data)
+      // console.log(this.data)
     }
   },
   data() { 
     return {
       job: "test",
-      year: "1990",
-      month: "Januari",
-      message: "measage",
+      yearStart: "1990",
+      yearEnd: "2000",
+      monthStart: "Januari",
+      monthEnd: "Januari",
+      message: "W",
       months: [
-        { title: "Januari", value: "01" },
-        { title: "Februari", value: "02" },
-        { title: "Maart", value: "03" },
-        { title: "April", value: "04" },
-        { title: "Mei", value: "05" },
-        { title: "Juni", value: "06" },
-        { title: "Juli", value: "07" },
-        { title: "Augustus", value: "08" },
-        { title: "September", value: "09" },
-        { title: "Oktober", value: "10" },
-        { title: "November", value: "11" },
-        { title: "December", value: "12" },
+        { title: "Januari", value: 1 },
+        { title: "Februari", value: 2 },
+        { title: "Maart", value: 3 },
+        { title: "April", value: 4 },
+        { title: "Mei", value: 5 },
+        { title: "Juni", value: 6 },
+        { title: "Juli", value: 7 },
+        { title: "Augustus", value: 8 },
+        { title: "September", value: 9 },
+        { title: "Oktober", value: 10 },
+        { title: "November", value: 11 },
+        { title: "December", value: 12 },
       ],
       years: [...Array(13).keys()].map(x => x + 2010)
     }
@@ -82,7 +115,7 @@ export default {
       }
       const sortedData = this.data.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
       return sortedData;
-    }
+    },
   },
 }
 </script>
@@ -90,16 +123,23 @@ export default {
 
 <template>
 <input v-model="message" placeholder="edit me" />
-<p>Year is: {{ year }}</p>
-<p>Month is: {{ month }}</p>
 
-<year-select class="select" :years="years" @update-year-value="updateYear"></year-select>
-
-<month-select class="select" :months="months" @update-month-value="updateMonth"></month-select>
+<p>Jaar start is: {{ yearStart }}</p>
+<year-select class="select" :years="years" @update-year-value="updateYearStart"></year-select>
+<p>Maand start is: {{ monthStart }}</p>
+<month-select class="select" :months="months" @update-month-value="updateMonthStart"></month-select>
+<p>Jaar einde: {{ yearEnd }}</p>
+<year-select class="select" :years="years" @update-year-value="updateYearEnd"></year-select>
+<p>Maand eind is: {{ monthEnd }}</p>
+<month-select class="select" :months="months" @update-month-value="updateMonthEnd"></month-select>
 
 <job-select class="select" :jobs="filteredData" @update-job-value="updateJob"></job-select>
 
 <div>Job: {{ job }}</div>
+
+<button @click="appendJob">Voeg toe</button>
+<button @click="removeJob">Verwijder</button>
+<button @click="getJobs">CV</button>
 
 </template>
 

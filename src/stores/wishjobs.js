@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useJobsStore = defineStore({
+export const useWishJobsStore = defineStore({
   id: 'jobs',
   state: () => ({
     jobs: []
