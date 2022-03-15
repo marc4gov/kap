@@ -3,7 +3,9 @@ import { defineStore } from 'pinia'
 export const useJobsStore = defineStore({
   id: 'jobs',
   state: () => ({
-    jobs: []
+    allJobs: [],
+    doneJobs: [],
+    wishJobs: []
   }),
   getters: {
     first: (state) => state.jobs[0]

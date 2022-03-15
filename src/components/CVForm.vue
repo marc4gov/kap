@@ -1,24 +1,28 @@
 <script setup>
   import {ref, onMounted} from 'vue'
   import { useJobsStore } from '../stores/jobs'
-  import { storeToRefs } from 'pinia'
+  import { useFetch } from './helpers/fetch'
+  import { NInput, NDatePicker, NButton, NSpace } from 'naive-ui'
 
-  const data = ref(null)
-  const error = ref(null)
+  // const data = ref(null)
+  // const error = ref(null)
   const loading = ref(true)
   
   const store = useJobsStore()
-  function getData(url) {
+  const { data, error } = useFetch('https://api.ovrhd.nl/competenties/')
+
+  function getAlternativeNames(url) {
+    let ans = []
     fetch(url)
     .then((res) => res.json())
-    .then((json) => (data.value = json))
-    .then(() => (loading.value = false))
+    .then((json) => (ans = json.alternativeNames))
     .catch((err) => (error.value = err))
-    return { data, error, loading }
+    return { ans, error }
   }
 
   onMounted(() => {
-    getData('https://api.ovrhd.nl/competenties/')
+    // getData('https://api.ovrhd.nl/competenties/')
+
   })
 </script>
 
@@ -50,8 +54,8 @@ export default {
         });
     },
     appendJob() {
-      this.store.jobs.push({
-        "id": this.job, 
+      this.store.doneJobs.push({
+        "id": this.job.split('/api/')[1], 
         "yearStart": this.yearStart, 
         "monthStart": this.monthStart,
         "yearEnd": this.yearEnd, 
@@ -59,10 +63,10 @@ export default {
       })
     },
     removeJob() {
-      this.store.jobs = this.arrayRemove(this.store.jobs, this.store.jobs[this.store.jobs.length-1])
+      this.store.doneJobs = this.arrayRemove(this.store.doneJobs, this.store.doneJobs[this.store.doneJobs.length-1])
     },
     getJobs() {
-      console.log(this.store.jobs)
+      console.log(this.store.doneJobs)
     }
   },
   components: {
@@ -73,7 +77,9 @@ export default {
   watch: {
     data() {
       console.log('Data loaded');
-      // console.log(this.data)
+      this.data.map((x) => this.store.allJobs.push({'title': x.title, 'job': x.link.split('/api/')[1]}))
+      // Promise.all(this.store.allJobs.map(x => x.alternativeNames = this.getAlternativeNames('https://api.ovrhd.nl/competenties/' + x.job)))
+      console.log("All Jobs: ", this.store.allJobs)
     }
   },
   data() { 
@@ -122,7 +128,7 @@ export default {
 
 
 <template>
-<input v-model="message" placeholder="edit me" />
+<n-input v-model:value="message" @update:value="message" placeholder="edit me" />
 
 <p>Jaar start is: {{ yearStart }}</p>
 <year-select class="select" :years="years" @update-year-value="updateYearStart"></year-select>
@@ -137,9 +143,9 @@ export default {
 
 <div>Job: {{ job }}</div>
 
-<button @click="appendJob">Voeg toe</button>
-<button @click="removeJob">Verwijder</button>
-<button @click="getJobs">CV</button>
+<n-button strong secondary type="primary" @click="appendJob">Voeg toe</n-button>
+<n-button strong secondary @click="removeJob">Verwijder</n-button>
+<n-button strong secondary @click="getJobs">CV</n-button>
 
 </template>
 

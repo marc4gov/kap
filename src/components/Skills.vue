@@ -5,17 +5,16 @@
   import { useJobsStore } from '../stores/jobs'
   import { useWishJobsStore } from '../stores/wishjobs'
   import { useSkillsStore } from '../stores/skills'
-  
-
+  import { useFetch } from './helpers/fetch'
   import { storeToRefs } from 'pinia'
 
   const data = ref([])
   const jobs = ref([])
+  const skills = ref([])
   const error = ref(null)
   const loading = ref(true)
   
   const jobsStore = useJobsStore()
-  const wishJobsStore = useWishJobsStore()
   const skillsStore = useSkillsStore()
   
   function getSkillsData(url) {
@@ -23,10 +22,15 @@
     .then((res) => res.json())
     .then((json) => {
       data.value.push(json)
+      skills.value.push({"title": json.title,
+                    "skills" : json.essentialCompetences.map((y) => ({
+                              "label": y.description, 
+                              "key": y.code
+      }))})
       return Promise.resolve(json.essentialCompetences)
     })
     .then((comps) => {
-      // console.log("Comps: ", comps)
+      console.log("Comps: ", comps)
       Promise.all(comps.map(x => getJobsData('https://api.ovrhd.nl/competenties/search/CP/' + x.code)))
     })
     .catch((err) => (error.value = err))
@@ -45,14 +49,9 @@
     return { jobs, error }
   }
 
-
-  function getOPLinks(jobs) {
-    return jobs.map(x => x.id.split("/api/")[1])
-  }
-
   onMounted(() => {
-    const links = getOPLinks(jobsStore.jobs)
-    links.map(x => getSkillsData('https://api.ovrhd.nl/competenties/' + x))
+    console.log(jobsStore.doneJobs)
+    jobsStore.doneJobs.map(x => getSkillsData('https://api.ovrhd.nl/competenties/' + x.id))
     loading.value = false
     console.log(jobs)
   })
@@ -61,18 +60,17 @@
 </script>
 
 <script>
-import SkillsItem from './SkillsItem.vue'
+import SkillsItems from './SkillsItems.vue'
+// import DataTable from "./DataTable.vue"
 
 export default {
   components: {
-    SkillsItem
+    SkillsItems,
+    // DataTable
   },
   methods: {
     removeItemOnce(arr, value) {
       var index = arr.indexOf(value);
-            console.log("Value: ", value)
-
-      console.log("Index: ", index)
       if (index > -1) {
         arr.splice(index, 1);
       }
@@ -84,39 +82,34 @@ export default {
       if (!this.jobs) {
         return 
       }
-      console.log("Jobs:", this.jobs)
       const concats = [].concat(...this.jobs)
-      console.log("Concats: ", concats)
       const cset = new Set(concats)
       let arr = [...cset]
-      const js = this.getOPLinks(this.jobsStore.jobs)
-      console.log("Js: ", js)
+      const js = this.jobsStore.doneJobs.map((x) => x.id)
       for (let i = 0; i < js.length; i++) {
         arr = this.removeItemOnce(arr, js[i])
       }
-      console.log("Arr: ", arr)
-      arr = arr.map((x) => ({ 
+      this.jobsStore.wishJobs = arr.map((x) => ({ 
         'job': x, 
         'count': concats.reduce((counter, obj) => obj === x ? counter += 1 : counter, 0)
       }))
-      arr = arr.filter((x) => (x.count >= 3))
-      console.log("Arr > 3: ", arr)
-
-
+      this.jobsStore.wishJobs = this.sortedData
       return
     },
-    filteredData() {
-      if (!this.data) {
-        return [];
-      } 
-      const sortedItems = this.sortedData.filter((job) => (job.title.includes(this.message)));
-      return sortedItems
+    skillsData() {
+      if (!this.skills) {
+        return null;
+      }
+      return this.skills;
     },
     sortedData() {
-      if (!this.data) {
+      if (!this.jobsStore.wishJobs) {
         return [];
       }
-      const sortedData = this.data.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+      const sortedData = this.jobsStore.wishJobs.sort((a, b) => a.count > b.count? -1 : 1);
+      sortedData.length = 10
+      sortedData.map((x) => (x.job = this.jobsStore.allJobs.find((y) => (y.job == x.job))))
+      console.log(sortedData)
       return sortedData;
     },
   }
@@ -124,18 +117,26 @@ export default {
 </script>
 
 <template>
-  <ul>
-  <li :v-if="!loading" v-for="dataItem in sortedData" :key="dataItem.title">
-    {{ dataItem.title }}
-    <SkillsItem
-      v-for="item in dataItem.essentialCompetences"
-      :key="item.code"
-      :code="item.code"
-      :description="item.description"
-    />
+
+<ul>
+  <li v-for="skill in skillsData" :key="skill.title">
+    {{skill.title}}
+        <!-- <SkillsItems :opts="skill.skills" :title="skill.title"/> -->
+
   </li>
-  </ul>
+</ul>
+
   <button @click="storeJobs">Wensberoepen</button>
+
+<ul>
+  <li v-for="job in jobsStore.wishJobs" :key="job.job">
+    {{job.job.title}} : {{job.count}}
+
+  </li>
+</ul>
+
+<!-- <data-table></data-table> -->
+
 </template>
 
 <style scoped>
