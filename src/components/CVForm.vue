@@ -112,7 +112,7 @@ export default {
   watch: {
     data() {
       console.log('Data loaded');
-      this.data.map((x) => this.store.allJobs.push({'title': x.title, 'job': x.link.split('/api/')[1]}))
+      this.data.map((x) => this.store.allJobs.push({'title': x.title, 'job': x.link.split('/api/')[1], "details": null}))
       console.log(this.store.allJobs)
     }
   },

@@ -7,6 +7,8 @@
   import { useSkillsStore } from '../stores/skills'
   import { useFetch } from './helpers/fetch'
   import { storeToRefs } from 'pinia'
+  import { NInput, NDatePicker, NButton, NTabPane, NTabs, NCard } from 'naive-ui'
+  import SelectItems from './SelectItems.vue'
 
   const data = ref([])
   const jobs = ref([])
@@ -60,14 +62,8 @@
 </script>
 
 <script>
-import SkillsItems from './SkillsItems.vue'
-// import DataTable from "./DataTable.vue"
 
 export default {
-  components: {
-    SkillsItems,
-    // DataTable
-  },
   methods: {
     removeItemOnce(arr, value) {
       var index = arr.indexOf(value);
@@ -118,13 +114,10 @@ export default {
 
 <template>
 
-<ul>
-  <li v-for="skill in skillsData" :key="skill.title">
-    {{skill.title}}
-        <!-- <SkillsItems :opts="skill.skills" :title="skill.title"/> -->
+    <!-- {{skill.title}} -->
+        <SelectItems :options="skill.skills" :title="skill.title"
+        v-for="skill in skillsData" :key="skill.title"/>
 
-  </li>
-</ul>
 
   <button @click="storeJobs">Wensberoepen</button>
 

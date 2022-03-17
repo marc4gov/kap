@@ -1,10 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
+import { NMessageProvider } from 'naive-ui'
 
 </script>
 
 <template>
+<n-message-provider>
+
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/ovrhd_wit.svg" width="125" height="125" />
 
@@ -15,12 +18,15 @@ import HelloWorld from '@/components/HelloWorld.vue'
         <RouterLink to="/">Uitleg</RouterLink>
         
         <RouterLink to="/cv">CV</RouterLink>        
-        <RouterLink to="/skills">Skills</RouterLink>
+        <RouterLink to="/jobs">Functies</RouterLink>
+        <RouterLink to="/skills">Competenties</RouterLink>
       </nav>
     </div>
   </header>
 
   <RouterView />
+</n-message-provider>
+
 </template>
 
 <style>
