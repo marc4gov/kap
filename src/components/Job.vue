@@ -28,7 +28,6 @@
         "label": x.description,
         "key": x.code
       }))
-      
     }
   }
 

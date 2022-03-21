@@ -1,9 +1,9 @@
 <script setup>
-import Job from '@/components/Job.vue'
+import Jobs from '@/components/Jobs.vue'
 </script>
 
 <template>
   <main>
-    <Job jobcode="OP-225"/>
+    <Jobs />
   </main>
 </template>
