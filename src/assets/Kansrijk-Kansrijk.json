@@ -1,0 +1,1127 @@
+[
+ {
+   "Branche": "Bouw",
+   "Niveau": "Lager",
+   "Titel": "Oppermannen / hulparbeiders grond-, weg- en waterbouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Lager",
+   "Titel": "Oppermannen / hulparbeiders bouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Grondverzetmachinisten (shovel/wiellaadschop, hydraulische graafmachine)"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Kraanmachinisten (mobiele kraan)"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Stratenmakers, rioleringsmedewerkers, vakmannen grond-, weg- en waterbouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Boormeesters bronbemaling"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Heiers"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Steigerbouwers"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Deskundig asbestverwijderaars, slopers bouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Betonreparateurs, betonstaalverwerkers"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "(Technisch) isoleerders"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Stukadoors, tegelzetters"
+ },
+ {
+   "Branche": "Bouw\n",
+   "Niveau": "Middelbaar",
+   "Titel": "Metselaars"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Betontimmermannen, bouwtimmermannen"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Dakdekkers"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Onderhoudsschilders"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Glaszetters"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Werkplaatstimmermannen, interieurbouwers/meubelmakers, wand- en plafondmonteurs"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Standbouwers, rolluik- en zonweringinstallateurs"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Landmeters, projectleiders landmeetkunde"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Werkvoorbereiders, tekenaars interieurbouwbedrijf"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "(Hoofd)uitvoerders grond-, weg- en waterbouw (gww)"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Opzichters weg- en waterbouw, medewerkers civiele techniek"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Tekenaars, werkvoorbereiders, calculatoren grond-, weg- en waterbouw (gww)"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "(Hoofd)uitvoerders bouw en installatie"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Werkvoorbereiders, calculatoren bouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Middelbaar",
+   "Titel": "Bouwkundig inspecteurs, EP adviseurs, BENG adviseurs"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Bodemkundig onderzoekers en –saneerders"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Adviseurs / ontwerper-constructeurs civiele techniek"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Projectleiders grond-, weg- en waterbouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Betontechnologen"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Bouwkundig adviseurs, constructeurs, tekenaars, BIM-modelleurs"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "Projectleiders bouw"
+ },
+ {
+   "Branche": "Bouw",
+   "Niveau": "Hoger",
+   "Titel": "EMVI-schrijvers, EMVI-coördinatoren"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Grond- en kabelwerkers, leidingleggers datacommunicatie"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs / leidingleggers gas en water"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs elektriciteitsnetten"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs telecommunicatiesystemen, glasvezelmonteurs"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Loodgieters / monteurs gas, water, sanitair, verwarming (incl. warmtepompen)"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Elektriciens, monteurs elektrische installaties (incl. zonnepanelen en laadpalen)"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Installateurs / monteurs luchtbehandeling, ventilatie en koeltechniek"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Liftmonteurs"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs beveiligingsinstallaties"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers technische dienst elektrotechnisch"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Meet- en regeltechnici, monteurs meet- en regeltechniek"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Middelbaar",
+   "Titel": "Tekenaars, werkvoorbereiders, calculatoren installatie- en elektrotechniek1"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Hoger",
+   "Titel": "Controleurs / inspecteurs elektrische installaties Ontwerpers elektronica en elektrotechnische installaties"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Hoger",
+   "Titel": "Ontwerpers elektronica en elektrotechnische installaties"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Hoger",
+   "Titel": "Projectleiders installatie- en elektrotechniek"
+ },
+ {
+   "Branche": "Installatie",
+   "Niveau": "Hoger",
+   "Titel": "Telecom engineers"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Rijwielmonteurs"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Autospuiters"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Autoschadeherstellers, autoruitschademonteurs"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Automonteurs (personenauto / bedrijfswagen), keurmeesters, werkplaatschefs Revisiemotortechnici auto's"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs mobiele werktuigen (incl. landbouwvoertuigen)"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Elektromonteurs schepen en treinen"
+ },
+ {
+   "Branche": "Voertuigentechniek",
+   "Niveau": "Middelbaar",
+   "Titel": "Scheepswerktuigkundigen"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Lager",
+   "Titel": "Verf- en lakspuiters"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Lager",
+   "Titel": "Assemblagemedewerkers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Assemblagemonteurs"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Pijpfitters"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Plaatwerkers, (CNC-)metaalbuigers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Constructiebankwerkers, constructiemedewerkers, carrosseriebouwers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Conventioneel verspaners, CNC-machinebedieners"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "CNC-verspaners, CNC-programmeurs"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Gereedschapsmakers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Instrumentmakers / fijnmechanici"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Lassers, lasrobotoperators"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Jachtbouwers, scheepstimmerlieden"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Machinaal houtbewerkers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Operators proces- en levensmiddelenindustrie"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Monteurs industriële machines en installaties / mechatronica (storing, service, installatie)"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Orderbegeleiders industrie (binnendienst)"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Productieplanners"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Voormannen, teamleiders assemblage / werktuigbouw"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Hoofden technische dienst"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Middelbaar",
+   "Titel": "Tekenaars, werkvoorbereiders, calculatoren werktuigbouw / procestechniek3 Accountmanagers techniek"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Productieleiders proces- en levensmiddelenindustrie"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Proces-, levensmiddelentechnologen, productontwikkelaars procesindustrie"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Chemisch analisten, biochemisch en microbiologisch analisten"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Industrieel ontwerpers (technisch)"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Ontwerpers industriële automatisering, PLC-programmeurs, embedded software engineers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Projectleiders, ontwerper-constructeurs werktuigbouw / machines / gereedschappen"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Projectleiders elektronica en industriële automatisering"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Regulatory affairs officers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Kwaliteitsmedewerkers, QA functionarissen, QA managers"
+ },
+ {
+   "Branche": "Industrie",
+   "Niveau": "Hoger",
+   "Titel": "Managers research & development (R&D)"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Heftruckchauffeurs"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Rangeerders"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Verhuizers"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Vuilnisophalers, -beladers"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Bijrijders"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Bestelwagenbezorgers (bv supermarkten)"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Lager",
+   "Titel": "Orderpickers, magazijn- en expeditiemedewerkers"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Vrachtwagenchauffeurs\n"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Matrozen binnenvaart"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Logistiek (administratief) medewerkers"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Magazijnchefs"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Expediteurs, declaranten, exportmedewerkers binnendienst4"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Middelbaar",
+   "Titel": "Transportplanners"
+ },
+ {
+   "Branche": "Transport-Logistiek",
+   "Niveau": "Hoger",
+   "Titel": "Treindienstleiders"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Tractorchauffeurs / loonwerkers / landbouwmachinisten"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers varkenshouderij"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "(Voorman) hoveniers / groenonderhoud, boomverzorgers, greenkeepers"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "(Vakbekwaam) medewerkers boomkwekerij"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Vakbekwaam / zelfstandig medewerkers teelt, vakexperts teelt en groene technologie"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Meewerkend voormannen / teamleiders / (assistent) bedrijfsleiders teelt"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers zaadteelt en plantenveredeling"
+ },
+ {
+   "Branche": "Landbouw, natuur en milieu",
+   "Niveau": "Middelbaar",
+   "Titel": "Keurmeesters AGF en sierteelt"
+ },
+ {
+   "Branche": "Veiligheid",
+   "Niveau": "Lager",
+   "Titel": "Verkeersregelaars"
+ },
+ {
+   "Branche": "Veiligheid",
+   "Niveau": "Lager",
+   "Titel": "Brandwachten / heetwerkwachten"
+ },
+ {
+   "Branche": "Veiligheid",
+   "Niveau": "Middelbaar",
+   "Titel": "Handhavers openbare ruimte (BOA’s)"
+ },
+ {
+   "Branche": "Veiligheid",
+   "Niveau": "Middelbaar",
+   "Titel": "Objectbeveiligers"
+ },
+ {
+   "Branche": "Veiligheid",
+   "Niveau": "Hoger",
+   "Titel": "Veiligheidskundigen"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Lager",
+   "Titel": "Verkoopmedewerkers tankstation"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Broodbakkers (inclusief industrieel bakkers)"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Verkoopmedewerkers voedingsspeciaalzaken"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Opticiens, verkoopmedewerkers optiek"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Audiciens"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Verkoopmedewerkers elektronica1"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Verkoopmedewerkers keukens/badkamers1"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Verkoopmedewerkers bouwmarkten1"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Interieurvakkrachten: keukenmonteurs, woningstoffeerders, parketvloerenleggers"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Middelbaar",
+   "Titel": "Elektromonteurs witgoed"
+ },
+ {
+   "Branche": "Detailhandel",
+   "Niveau": "Hoger",
+   "Titel": "Managers / bedrijfsleiders supermarkt"
+ },
+ {
+   "Branche": "Horeca",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers fastservice (in o.a. snackbars, ijssalons, lunchrooms)"
+ },
+ {
+   "Branche": "Horeca",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers bediening, barpersoneel"
+ },
+ {
+   "Branche": "Horeca",
+   "Niveau": "Middelbaar",
+   "Titel": "Restaurantkoks"
+ },
+ {
+   "Branche": "Horeca",
+   "Niveau": "Middelbaar",
+   "Titel": "Hotelreceptionisten"
+ },
+ {
+   "Branche": "Horeca",
+   "Niveau": "Middelbaar",
+   "Titel": "Bedrijfsleiders / ondernemers horeca"
+ },
+ {
+   "Branche": "Schoonmaak - reiniging",
+   "Niveau": "Lager",
+   "Titel": "Schoonmakers (o.a. kantoren, bedrijven, hotels, vakantieparken)"
+ },
+ {
+   "Branche": "Schoonmaak - reiniging",
+   "Niveau": "Lager",
+   "Titel": "Gespecialiseerde schoonmakers (industrieel reinigers, calamiteiten, cleanrooms)"
+ },
+ {
+   "Branche": "Schoonmaak - reiniging",
+   "Niveau": "Lager",
+   "Titel": "Glazenwassers"
+ },
+ {
+   "Branche": "Schoonmaak - reiniging",
+   "Niveau": "Lager",
+   "Titel": "Ongediertebestrijders"
+ },
+ {
+   "Branche": "Schoonmaak - reiniging",
+   "Niveau": "Middelbaar",
+   "Titel": "Teamleiders, voormannen schoonmaak"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Financieel administrateurs, salarisadministrateurs"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Assurantieadviseurs, schadebehandelaars, acceptanten verzekeringsmaatschappij"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Kredietbeoordelaars, hypotheekadviseurs"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "AA- en assistent accountants, registeraccountants"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Belastingadviseurs"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Assistent controllers, controllers, IT-auditors"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Compliance officers, customer due dilligence (cdd)- / know your customer (kyc) specialisten"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Assistent inkopers, inkopers, hoofden inkoop"
+ },
+ {
+   "Branche": "Financieel - juridisch",
+   "Niveau": "Hoger",
+   "Titel": "Juristen, juridisch adviseurs, kandidaatnotarissen"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Middelbaar",
+   "Titel": "Commercieel medewerkers binnendienst"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers klantcontact / klantenservice, supervisors klantcontact"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Hoger",
+   "Titel": "Taxateurs onroerend goed, vastgoedmanagers / vastgoedbeheerders"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Hoger",
+   "Titel": "Intercedenten"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Hoger",
+   "Titel": "Recruiters"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Hoger",
+   "Titel": "HR-adviseurs"
+ },
+ {
+   "Branche": "Commercieel - HR",
+   "Niveau": "Hoger",
+   "Titel": "Online marketeers"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Middelbaar",
+   "Titel": "Ict-servicedeskmedewerkers"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "BI specialisten, data analisten, data scientists"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Software consultants ERP / CRM"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Applicatie-, systeem- en functioneel beheerders"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Datawarehouse ontwikkelaars"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Database administrators"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Netwerkbeheerders"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Specialisten technische infrastructuur en netwerkengineers"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Architecten ict, systeemontwikkelaars"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Programmeurs / developers specifieke talen (o.a. .NET, java, C#, PHP, javascript)"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Security specialisten"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Software testers, testmanagers"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "Webdevelopers (backend/technisch)"
+ },
+ {
+   "Branche": "ICT",
+   "Niveau": "Hoger",
+   "Titel": "GEO / GIS specialisten (geografisch informatiesysteem)"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers burgerzaken"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Middelbaar",
+   "Titel": "(Onder)officieren defensie (m.n. beroepen met technische component)"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Middelbaar",
+   "Titel": "Niet-militairen defensie (m.n. beroepen in (elektro)techniek en ict)"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Bijstandsconsulenten / klantmanagers Werk en Inkomen gemeente"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Consulenten wet maatschappelijke ondersteuning (wmo)"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Reclasseringswerkers"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Beleidsmedewerkers bestuurlijk-juridisch, economie"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Beleidsmedewerkers (inclusief managers) milieu"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Beleidsmedewerkers (inclusief managers) ruimtelijke ordening / planologie"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Stedenbouwkundig ontwerpers, adviseurs en (verkeers)planologen"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Landschapsarchitecten"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Hydrologen"
+ },
+ {
+   "Branche": "Overheid",
+   "Niveau": "Hoger",
+   "Titel": "Milieu-inspecteurs"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Middelbaar",
+   "Titel": "Zweminstructeurs"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Middelbaar",
+   "Titel": "Pedagogisch medewerkers kinderopvang"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Leerkrachten basisonderwijs"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Leerkrachten speciaal onderwijs"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten vo / mbo talen (Nederlands, Duits, klassieke talen, Frans, Engels)"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten vo / mbo exacte vakken (wiskunde, natuurkunde, scheikunde, biologie, ict / informatica)"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten vo / mbo economie"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten lichamelijke opvoeding"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Vakdocenten beroepsonderwijs verpleegkunde / verzorging"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Vakdocenten beroepsonderwijs techniek"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten hbo / wo wiskunde, natuurkunde, techniek, ict / informatica"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Docenten hbo / wo economie, accountancy, recht"
+ },
+ {
+   "Branche": "Onderwijs - pedagogisch",
+   "Niveau": "Hoger",
+   "Titel": "Onderwijskundigen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Lager",
+   "Titel": "Huishoudelijk medewerkers thuiszorg"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Helpenden in instellingen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Verzorgenden individuele gezondheidszorg (ig), kraamverzorgenden"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Woonbegeleiders gehandicaptenzorg"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Algemeen verpleegkundigen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Medewerkers steriele medische hulpmiddelen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Apothekersassistenten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Tandartsassistenten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Doktersassistenten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Orthopedisch (prothese) technici"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Middelbaar",
+   "Titel": "Medisch pedicures"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Wijkverpleegkundigen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Gespecialiseerd verpleegkundigen (o.a. ambulance, spoedeisende hulp, intensive care, oncologie, cardiologie, dialyse, kinderafdeling, geriatrie, revalidatie)"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Verpleegkundigen psychiatrie, GGZ"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Praktijkondersteuners huisarts GGZ (poh-ggz)"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Verpleegkundig specialisten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Physician assistants"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Mondhygiënisten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Tandartsen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Dierenartsen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Huidtherapeuten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Ergotherapeuten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Fysiotherapeuten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Logopedisten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Anesthesiemedewerkers en operatie assistenten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Laboranten klinische neurofysiologie, hart- en longfunctie assistenten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Radiodiagnostisch laboranten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Analisten pathologie, medisch-microbiologisch analisten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Arbeidshygiënisten"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Gz-psychologen, klinisch psychologen, eerste lijns-psychologen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Specifieke medisch specialisten (o.a. specialisten ouderengeneeskunde, artsen spoedeisende hulp, artsen verstandelijk gehandicapten, psychiaters)"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Bedrijfsartsen, verzekeringsartsen"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Sociaal geneeskundigen maatschappij en gezondheid (jeugd en gezondheid, infectieziekten, verslavingsartsen)"
+ },
+ {
+   "Branche": "Zorg",
+   "Niveau": "Hoger",
+   "Titel": "Apothekers"
+ }
+]

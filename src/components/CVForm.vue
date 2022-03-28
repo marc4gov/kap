@@ -5,39 +5,36 @@
   import pdfMake from "pdfmake/build/pdfmake";
   import pdfFonts from "pdfmake/build/vfs_fonts";
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
-  import { NInput, NDatePicker, NButton, NTabPane, NTabs, NCard } from 'naive-ui'
+  import { NInput, NDatePicker, NButton, NTabPane, NTabs, NCard, NPopover } from 'naive-ui'
+  import SelectItems from "./SelectItems.vue"
+  import VIABLE from '../assets/Kansrijk-Kansrijk.json'
+  import NONVIABLE from '../assets/Kansarm-Kansarm.json'
 
   // const data = ref(null)
   // const error = ref(null)
   const loading = ref(true)
+  const message = ref("T")
+
+  const jobsStore = useJobsStore()
+  const nonviableJobs = NONVIABLE
+  const viableJobs = VIABLE
+  const alternativeNames = []
   
-  const store = useJobsStore()
   const { data, error } = useFetch('https://api.ovrhd.nl/competenties/')
 
-  function getAlternativeNames(url) {
-    let ans = []
-    fetch(url)
-    .then((res) => res.json())
-    .then((json) => (ans = json.alternativeNames))
-    .catch((err) => (error.value = err))
-    return { ans, error }
-  }
-
   onMounted(() => {
-    // getData('https://api.ovrhd.nl/competenties/')
-
+    viableJobs.map((x) => jobsStore.viableJobs.push({'title': x.Titel, 'job': null, "details": null}))
+    nonviableJobs.map((x) => jobsStore.nonviableJobs.push({'title': x.Titel, 'job': null, "details": null}))
+    console.log("Viable: ", jobsStore.viableJobs)
   })
 </script>
 
 <script>
-import JobSelect from './JobSelect.vue'
-import MonthSelect from './MonthSelect.vue'
-import YearSelect from './YearSelect.vue'
 
 export default {
   methods: {
     updateJob(val) {
-      this.job = val.split('/api/')[1]
+      this.job = val
     },
     updateYearStart(val) {
       this.yearStart = val
@@ -51,16 +48,16 @@ export default {
     updateMonthEnd(val) {
       this.monthEnd = val
     },
-    arrayRemove(arr, value) { 
+    arrayRemove(arr, key) { 
         return arr.filter(function(ele){ 
-            return ele != value; 
+            return ele != key; 
         });
     },
     appendJob() {
       const id = this.job
-      const joblink = this.store.allJobs.find((x) => (x.job == id))
-      console.log("Joblink: ", joblink)
-      this.store.doneJobs.push({
+      const joblink = this.jobsStore.allJobs.find((x) => (x.job == id))
+      // console.log("Joblink: ", joblink)
+      this.jobsStore.doneJobs.push({
         "id": id, 
         "title": joblink.title,
         "yearStart": this.yearStart, 
@@ -70,11 +67,11 @@ export default {
       })
     },
     removeJob() {
-      this.store.doneJobs = this.arrayRemove(this.store.doneJobs, this.store.doneJobs[this.store.doneJobs.length-1])
+      this.jobsStore.doneJobs = this.arrayRemove(this.jobsStore.doneJobs, this.jobsStore.doneJobs[this.jobsStore.doneJobs.length-1])
     },
     getJobs() {
       const body1 = ['Code', 'Functie', 'Start maand', 'Start jaar', 'Einde maand', 'Einde jaar' ]
-      const jobsArray = this.store.doneJobs.map((job) => [job.id, job.title, job.monthStart, job.yearStart, job.monthEnd, job.yearEnd])
+      const jobsArray = this.jobsStore.doneJobs.map((job) => [job.id, job.title, job.monthStart, job.yearStart, job.monthEnd, job.yearEnd])
       jobsArray.unshift(body1)
       const docDefinition = {
         header: {text: 'CV 2.0: Interactief CV gebaseerd op de CompetentNL standaard', margin: [ 20, 20, 10, 20 ]},
@@ -104,17 +101,13 @@ export default {
 
     }
   },
-  components: {
-    JobSelect,
-    MonthSelect,
-    YearSelect
-  },  
   watch: {
     data() {
       console.log('Data loaded');
-      this.data.map((x) => this.store.allJobs.push({'title': x.title, 'job': x.link.split('/api/')[1], "details": null}))
-      console.log(this.store.allJobs)
-    }
+      this.jobsStore.allJobs = []
+      this.data.map((x) => this.jobsStore.allJobs.push({'title': x.title, 'job': x.link.split('/api/')[1], "details": null}))
+      console.log(this.jobsStore.allJobs)
+    },
   },
   data() { 
     return {
@@ -123,37 +116,36 @@ export default {
       yearEnd: "2000",
       monthStart: "1",
       monthEnd: "1",
-      message: "W",
       months: [
-        { title: "Januari", value: 1 },
-        { title: "Februari", value: 2 },
-        { title: "Maart", value: 3 },
-        { title: "April", value: 4 },
-        { title: "Mei", value: 5 },
-        { title: "Juni", value: 6 },
-        { title: "Juli", value: 7 },
-        { title: "Augustus", value: 8 },
-        { title: "September", value: 9 },
-        { title: "Oktober", value: 10 },
-        { title: "November", value: 11 },
-        { title: "December", value: 12 },
+        { label: "Januari", key: 1 },
+        { label: "Februari", key: 2 },
+        { label: "Maart", key: 3 },
+        { label: "April", key: 4 },
+        { label: "Mei", key: 5 },
+        { label: "Juni", key: 6 },
+        { label: "Juli", key: 7 },
+        { label: "Augustus", key: 8 },
+        { label: "September", key: 9 },
+        { label: "Oktober", key: 10 },
+        { label: "November", key: 11 },
+        { label: "December", key: 12 },
       ],
-      years: [...Array(13).keys()].map(x => x + 2010)
+      years: [...Array(13).keys()].map((x )=> ({label: x + 2010, key: x + 2010}))
     }
   },
   computed: {
     filteredData() {
-      if (!this.data) {
-        return [];
-      } 
-      const sortedItems = this.sortedData.filter((job) => (job.title.startsWith(this.message.charAt(0).toUpperCase() + this.message.slice(1))));
-      return sortedItems
-    },
-    sortedData() {
-      if (!this.data) {
+      if (!this.jobsStore.allJobs) {
         return [];
       }
-      const sortedData = this.data.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+      const sortedItems = this.sortedData.filter((job) => (job.title.startsWith(this.message.charAt(0).toUpperCase() + this.message.slice(1))));
+      return sortedItems.map((x) => ({"label": x.title, "key": x.job}))
+    },
+    sortedData() {
+      if (!this.jobsStore.allJobs) {
+        return [];
+      }
+      const sortedData = this.jobsStore.allJobs.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
       return sortedData;
     },
   },
@@ -162,27 +154,30 @@ export default {
 
 
 <template>
-  <n-input v-model:value="message" @update:value="message" placeholder="voer eerste letters beroep in" />
+
+  <!-- <n-popover trigger="hover">
+    <template #trigger>
+      <n-input v-model:key="message" @update:key="message" />
+    </template>
+    <span>voer de eerste letter van de functie in</span>
+  </n-popover> -->
+    
+
 
   <n-table :bordered="false" :single-line="false">
     <thead>
       <tr>
-        <th>Functie</th>
-        <th>Start Maand</th>
-        <th>Start Jaar</th>
-        <th>Einde Maand</th>
-        <th>Einde Jaar</th>
+        <th><n-input v-model:value="message" @update:value="message" placeholder="voer eerste letters beroep in" /></th>
+        <th><select-items :options="filteredData" title="Functies" @update-value="updateJob"></select-items></th>
+        <th><select-items :options="months" title="Start Maand" @update-value="updateMonthStart"></select-items></th>
+        <th><select-items :options="years" title="Start Jaar" @update-value="updateYearStart"></select-items></th>
+        <th><select-items :options="months" title="Einde Maand" @update-value="updateMonthEnd"></select-items></th>
+        <th><select-items :options="years" title="Einde Jaar" @update-value="updateYearEnd"></select-items></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><job-select class="select" :jobs="filteredData" @update-job-value="updateJob"></job-select></td>
-        <td><month-select class="select" :months="months" @update-month-value="updateMonthStart"></month-select></td>
-        <td><year-select class="select" :years="years" @update-year-value="updateYearStart"></year-select></td>
-        <td><month-select class="select" :months="months" @update-month-value="updateMonthEnd"></month-select></td>
-        <td><year-select class="select" :years="years" @update-year-value="updateYearEnd"></year-select></td>
-      </tr>
-      <tr>
+        <td>{{ message }}</td>
         <td>{{ job }}</td>
         <td>{{ monthStart }}</td>
         <td>{{ yearStart }}</td>
@@ -195,12 +190,13 @@ export default {
         <td><n-button strong type= "tertiary" @click="getJobs">CV</n-button></td>
         <td></td>
         <td></td>
+        <td></td>
       </tr>
     </tbody>
   </n-table>
 
 
-<n-card title="CV 2.0" content-style="padding: 20;">
+<n-card label="CV 2.0" content-style="padding: 20;">
       Interactief CV gebaseerd op de CompetentNL standaard
 
   <n-tabs
@@ -209,7 +205,7 @@ export default {
     :tabs-padding="20"
     pane-style="padding: 20px;"
   >
-    <n-tab-pane v-for="job in store.doneJobs" :key="job.id" :name="job.title">
+    <n-tab-pane v-for="job in jobsStore.doneJobs" :key="job.id" :name="job.title">
       {{job.id}}: {{job.title}} | {{job.monthStart}}-{{job.yearStart}} tot {{job.monthEnd}}-{{job.yearEnd}}
     </n-tab-pane>
   </n-tabs>
@@ -219,38 +215,3 @@ export default {
 </n-card>
 
 </template>
-
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-.select{
-  text-align: center;
-  color: var(--vt-c-text-dark-2);
-  background: var(--vt-c-black);
-  border:none;
-}
-
-.select:active {
-    background-color: var(--vt-c-black);
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
-</style>

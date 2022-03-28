@@ -5,7 +5,10 @@ export const useJobsStore = defineStore({
   state: () => ({
     allJobs: [],
     doneJobs: [],
-    wishJobs: []
+    matchJobs: [],
+    wishJobs: [],
+    viableJobs: [],
+    nonviableJobs: []
   }),
   getters: {
     first: (state) => state.jobs[0]

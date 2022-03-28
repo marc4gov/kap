@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+// import { defineProps, defineEmits } from 'vue'
 import { useMessage } from 'naive-ui'
 import { NButton, NDropdown } from 'naive-ui'
 
 const props = defineProps({
-    options: Array, 
+    options: [Object], 
     title: String,
 })
 const emit = defineEmits(['updateValue'])
 const message = useMessage()
 
 function handleSelect (key: string | number) {
-  message.info(String(key))
+  let obj = props.options.find((o) => (o.key === key));
+  message.info(String(key) + " | " + obj.label)
   emit('updateValue', String(key))
 }
 </script>
