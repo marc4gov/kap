@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // import { defineProps, defineEmits } from 'vue'
 import { useMessage } from 'naive-ui'
-import { NButton, NDropdown } from 'naive-ui'
+import { NButton, NDropdown, NConfigProvider} from 'naive-ui'
+import { darkTheme } from 'naive-ui'
 
 const props = defineProps({
     options: [Object], 
@@ -19,13 +20,17 @@ function handleSelect (key: string | number) {
 
 
 <template>
+    <n-config-provider :theme="darkTheme">
+
   <n-dropdown
     trigger="click"
     :options="options"
     :show-arrow="true"
+    placement="bottom-start"
     @select="handleSelect"
   >
     <n-button>{{title}}</n-button>
   </n-dropdown>
+      </n-config-provider>
 </template>
 

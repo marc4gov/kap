@@ -5,21 +5,28 @@
   import pdfMake from "pdfmake/build/pdfmake";
   import pdfFonts from "pdfmake/build/vfs_fonts";
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
-  import { NInput, NDatePicker, NButton, NTabPane, NTabs, NCard, NPopover } from 'naive-ui'
+  
+  import { InputFilled } from '@vicons/material'
+  import { NInput, NDatePicker, NButton, NTabPane, NTabs, NCard, NSelect, NIcon, NConfigProvider } from 'naive-ui'
   import SelectItems from "./SelectItems.vue"
   import VIABLE from '../assets/Kansrijk-Kansrijk.json'
   import NONVIABLE from '../assets/Kansarm-Kansarm.json'
+  import { darkTheme } from 'naive-ui'
 
   // const data = ref(null)
   // const error = ref(null)
   const loading = ref(true)
-  const message = ref("T")
+  const message = ref("")
+  // const yearStart =  ref(2022), 
+  // const monthStart = ref(1),
+  // const yearEnd = ref(2022),
+  // const monthEnd = ref(1),
 
   const jobsStore = useJobsStore()
   const nonviableJobs = NONVIABLE
   const viableJobs = VIABLE
   const alternativeNames = []
-  
+
   const { data, error } = useFetch('https://api.ovrhd.nl/competenties/')
 
   onMounted(() => {
@@ -32,6 +39,9 @@
 <script>
 
 export default {
+  components: {
+    InputFilled,
+  },
   methods: {
     updateJob(val) {
       this.job = val
@@ -53,6 +63,24 @@ export default {
             return ele != key; 
         });
     },
+    getWeight(monthStart, yearStart, monthEnd, yearEnd) {
+      const years = yearEnd - yearStart
+      let totalmonths = years * 12
+      if (years >= 0) {
+        const months = monthEnd - monthStart
+        totalmonths += months
+      } else {
+        return 0
+      }
+      const currentTime = new Date()
+      return (totalmonths -  (currentTime.getFullYear() - yearEnd) * 2)
+    },
+    weighted() {
+      if (!this.jobsStore.doneJobs) {
+        return [];
+      }
+      this.jobsStore.doneJobs.forEach((job) => (job.weight = this.getWeight(job.monthStart, job.yearStart, job.monthEnd, job.yearEnd)))
+    },
     appendJob() {
       const id = this.job
       const joblink = this.jobsStore.allJobs.find((x) => (x.job == id))
@@ -64,6 +92,7 @@ export default {
         "monthStart": this.monthStart,
         "yearEnd": this.yearEnd, 
         "monthEnd": this.monthEnd,
+        "weight": this.getWeight(this.monthStart, this.yearStart, this.monthEnd, this.yearEnd)
       })
     },
     removeJob() {
@@ -71,7 +100,7 @@ export default {
     },
     getJobs() {
       const body1 = ['Code', 'Functie', 'Start maand', 'Start jaar', 'Einde maand', 'Einde jaar' ]
-      const jobsArray = this.jobsStore.doneJobs.map((job) => [job.id, job.title, job.monthStart, job.yearStart, job.monthEnd, job.yearEnd])
+      const jobsArray = this.jobsStore.doneJobs.map((job) => [job.id, job.title, job.monthStart, job.yearStart, job.monthEnd, job.yearEnd, job.weight])
       jobsArray.unshift(body1)
       const docDefinition = {
         header: {text: 'CV 2.0: Interactief CV gebaseerd op de CompetentNL standaard', margin: [ 20, 20, 10, 20 ]},
@@ -162,12 +191,20 @@ export default {
     <span>voer de eerste letter van de functie in</span>
   </n-popover> -->
     
+    <n-config-provider :theme="darkTheme">
 
 
   <n-table :bordered="false" :single-line="false">
     <thead>
       <tr>
-        <th><n-input v-model:value="message" @update:value="message" placeholder="voer eerste letters beroep in" /></th>
+        <th>
+          <n-input round v-model:value="message" @update:value="message" placeholder="voer eerste letters beroep in">
+            <template #prefix>
+              <n-icon :component="InputFilled" />
+            </template>
+          </n-input>
+          </th>
+        <!-- <th><n-select v-model:value="job" :options="filteredData" /></th> -->
         <th><select-items :options="filteredData" title="Functies" @update-value="updateJob"></select-items></th>
         <th><select-items :options="months" title="Start Maand" @update-value="updateMonthStart"></select-items></th>
         <th><select-items :options="years" title="Start Jaar" @update-value="updateYearStart"></select-items></th>
@@ -187,7 +224,7 @@ export default {
       <tr>
         <td><n-button strong secondary type="primary" @click="appendJob">Voeg toe</n-button></td>
         <td><n-button strong type="secondary" @click="removeJob">Verwijder</n-button></td>
-        <td><n-button strong type= "tertiary" @click="getJobs">CV</n-button></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -206,12 +243,14 @@ export default {
     pane-style="padding: 20px;"
   >
     <n-tab-pane v-for="job in jobsStore.doneJobs" :key="job.id" :name="job.title">
-      {{job.id}}: {{job.title}} | {{job.monthStart}}-{{job.yearStart}} tot {{job.monthEnd}}-{{job.yearEnd}}
+      {{job.id}}: {{job.title}} | {{job.monthStart}}-{{job.yearStart}} tot {{job.monthEnd}}-{{job.yearEnd}} | gewicht: {{job.weight}}
     </n-tab-pane>
   </n-tabs>
   <template #action>
     <n-button strong secondary @click="getJobs">PDF maken</n-button>
   </template>
 </n-card>
+
+    </n-config-provider>
 
 </template>
