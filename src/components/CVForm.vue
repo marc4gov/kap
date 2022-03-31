@@ -204,7 +204,6 @@ export default {
             </template>
           </n-input>
           </th>
-        <!-- <th><n-select v-model:value="job" :options="filteredData" /></th> -->
         <th><select-items :options="filteredData" title="Functies" @update-value="updateJob"></select-items></th>
         <th><select-items :options="months" title="Start Maand" @update-value="updateMonthStart"></select-items></th>
         <th><select-items :options="years" title="Start Jaar" @update-value="updateYearStart"></select-items></th>

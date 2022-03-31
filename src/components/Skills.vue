@@ -144,13 +144,13 @@ export default {
     updateAlternative(val) {
       this.alternativeName = val
     },
-    removeItemOnce(arr, value) {
-      var index = arr.indexOf(value);
-      if (index > -1) {
-        arr.splice(index, 1);
-      }
-      return arr;
-    }
+    // removeItemOnce(arr, value) {
+    //   var index = arr.indexOf(value);
+    //   if (index > -1) {
+    //     arr.splice(index, 1);
+    //   }
+    //   return arr;
+    // }
   },
   computed: {
     skillsData() {
