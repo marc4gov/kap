@@ -71,7 +71,6 @@
       }
     }
     for (let i=0; i < jobsStore.nonviableJobs.length; i++) {
-      // console.log("Viablejob: ", this.jobsStore.viableJobs[i].title)
       if (jobsStore.nonviableJobs[i].title.includes(jobTitle.substring(0,10))) {
         return "Nee"
       }
