@@ -20,7 +20,7 @@ import { darkTheme } from 'naive-ui'
         <RouterLink to="/">Uitleg</RouterLink>
         
         <RouterLink to="/cv">CV Maken</RouterLink>        
-        <RouterLink to="/jobs">Functie Details</RouterLink>
+        <!-- <RouterLink to="/jobs">Functie Details</RouterLink> -->
         <RouterLink to="/skills">Matching</RouterLink>
       </nav>
     </div>

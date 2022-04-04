@@ -12,6 +12,7 @@
 
   const jobs = ref([])
   const skills = ref([])
+  const skill = ref(null)
   const alternativeNames = ref([])
   const alternativeName = ref(null)
   
@@ -40,45 +41,38 @@
     })
     .then((comps) => {
       // get all job codes with these competences
-      Promise.all(comps.map(x => getJobsData('https://api.ovrhd.nl/competenties/search/CP/' + x.code, jobCode)))
+      Promise.all(comps.map(x => getJobsData('https://api.ovrhd.nl/competenties/search/CP/' + x.code, jobCode, x.code, x.description)))
     })
     .catch((err) => (error.value = err))
 
     return { skills, error }
   }
 
-  function getJobsData(url, jobCode) {
+  function getJobsData(url, jobCode, skillsCode, skillsDescription) {
     fetch(url)
     .then((res) => res.json())
     .then((json) => {
       jobs.value.push(json.map(x => ({
         "code": x.link.split("/api/")[1],
-        "weight": jobsStore.doneJobs.find(o => o.id === jobCode).weight
+        "weight": jobsStore.doneJobs.find(o => o.id === jobCode).weight,
+        "skillsCode": skillsCode,
+        "skillsDescription": skillsDescription
       })))
     })
     .catch((err) => (error.value = err))
     return { jobs, error }
   }
 
-  function removeItemOnce(arr, value) {
-    var index = arr.indexOf(value);
-    if (index > -1) {
-      arr.splice(index, 1);
-    }
-    return arr;
-  }
-
-
   function isViableJob(jobTitle) {
     for (let i=0; i < jobsStore.viableJobs.length; i++) {
       // console.log("Viablejob: ", this.jobsStore.viableJobs[i].title)
-      if (jobsStore.viableJobs[i].title.includes(jobTitle.substring(0,6))) {
+      if (jobsStore.viableJobs[i].title.includes(jobTitle.substring(0,10))) {
         return "Ja"
       }
     }
     for (let i=0; i < jobsStore.nonviableJobs.length; i++) {
       // console.log("Viablejob: ", this.jobsStore.viableJobs[i].title)
-      if (jobsStore.nonviableJobs[i].title.includes(jobTitle.substring(0,6))) {
+      if (jobsStore.nonviableJobs[i].title.includes(jobTitle.substring(0,10))) {
         return "Nee"
       }
     }
@@ -105,17 +99,31 @@
     if (!jobs) {
       return 
     }
-    const concats = [].concat(...jobs.value)
-    const cset = new Set(concats)
-    let arr = [...cset]
+    console.log("Jobs: ", jobs.value)
+
+    let concats = [].concat(...jobs.value)
+    console.log("Concats before filter: ", concats)
+
     const js = jobsStore.doneJobs.map((x) => x.id)
     for (let i = 0; i < js.length; i++) {
-      arr = removeItemOnce(arr, js[i])
+      concats = concats.filter( el => el.code !== js[i] )
     }
-    jobsStore.matchJobs.value = arr.map((x) => ({ 
-      'job': x, 
-      'count': concats.reduce((counter, obj) => obj === x ? counter += 1 : counter, 0),
-    }))
+
+    console.log("Concats: ", concats)
+    let codeSet = new Set(concats.map(item => item.code));
+    codeSet = [...codeSet]
+
+    jobsStore.matchJobs.value = codeSet.map((x) => {
+      const results = concats.filter(el => el.code == x)
+      const sks = results.map((x) => ({"key": x.skillsCode, "label": x.skillsDescription}))
+      return { 
+        'job': x, 
+        'count': results.length,
+        'weight': results.reduce( ( sum, { weight } ) => sum + weight , 0),
+        'skills': sks
+      }
+    })
+    console.log("Match JobsStore: ", jobsStore.matchJobs.value)
     const sorted = jobsStore.matchJobs.value.sort((a, b) => a.count > b.count? -1 : 1);
     sorted.length = 10
     sorted.map((x) => (x.job = jobsStore.allJobs.find((y) => (y.job == x.job))))
@@ -130,7 +138,6 @@
 
   onMounted(() => {
     jobsStore.doneJobs.map(x => getSkillsData('https://api.ovrhd.nl/competenties/', x.id))
-    console.log("JobsStore: ", jobsStore.viableJobs)
     loading.value = false
   })
 
@@ -144,13 +151,9 @@ export default {
     updateAlternative(val) {
       this.alternativeName = val
     },
-    // removeItemOnce(arr, value) {
-    //   var index = arr.indexOf(value);
-    //   if (index > -1) {
-    //     arr.splice(index, 1);
-    //   }
-    //   return arr;
-    // }
+    updateSkill(val) {
+      this.skill = val
+    },
   },
   computed: {
     skillsData() {
@@ -175,13 +178,13 @@ export default {
     <thead>
       <tr>
         <th>Functie</th>
-        <th>Alternatieve Naam Code</th>
+        <!-- <th>Alternatieve Naam Code</th> -->
       </tr>
     </thead>
     <tbody>
       <tr v-for="alternative in alternativeNamesData" :key="alternative.title">
         <td><select-items :options="alternative.alternativeNames" :title="alternative.title" @update-value="updateAlternative"></select-items></td>
-        <td>{{alternativeName}}</td>
+        <!-- <td>{{alternativeName}}</td> -->
       </tr>
       <tr>
         <td><n-button type="primary" @click="storeJobs">Matchberoeper</n-button></td>
@@ -195,13 +198,15 @@ export default {
       <tr>
         <th>Match</th>
         <th>Aantal overeenkomstige competenties</th>
+        <th>Gewicht</th>
         <th>Kansrijk?</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="job in jobsStore.matchJobs.value" :key="job.job">
         <td>{{job.job.title}}</td>
-        <td>{{job.count}}</td>
+        <td><select-items :options="job.skills" :title="job.count" @update-value="updateSkill"></select-items></td>
+        <td>{{job.weight}}</td>
         <td>{{job.viable}}</td>
       </tr>
     </tbody>
